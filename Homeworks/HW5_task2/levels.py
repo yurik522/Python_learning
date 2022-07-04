@@ -6,13 +6,14 @@ user_choice = input('Орел - жми 1. Решка - жми 0:\n')
 input('Бросай монету(жми ввод)\n')
 toss_coin = randint(1, 1)
 print(toss_coin)
+
 if int(user_choice) == toss_coin:
     while total_count > 0:
         user_count = int(input('Твой ход: \n'))
         if user_count > max_amount:
             print('Неправильный ход, можно брать не более %d конфет' %(max_amount))
             continue
-        if not user_count:
+        if  user_count <= 0:
             print('Нужно взять хотя бы одну конфету')
             continue
         total_count = total_count - user_count
