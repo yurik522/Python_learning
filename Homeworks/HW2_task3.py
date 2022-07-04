@@ -4,11 +4,11 @@
 from random import randint
 N = int(input('Задайте длину списка: '))
 
-def fill_list_integer(N: int):
-    list = []
-    for i in range(0, N):
-        list.append(i + 1) 
-    return list
+# def fill_list_integer(N: int):
+#     list = []
+#     for i in range(0, N):
+#         list.append(i + 1) 
+#     return list
 
 def shuffle_list (list: list):
     new_list = []
@@ -24,11 +24,16 @@ def shuffle_list (list: list):
             list.pop(k) #удаляем элемент из списка для искллючения повторений
         else:
             list.pop(k)
-            i += 1              
+            i += 1
+
     return new_list
-list = fill_list_integer(N)
+list = [i for i in range(1, N+1)]
+copy_list = list.copy()
 print(list)
 print(shuffle_list(list))
+print(list)
+print(copy_list)
+
 
 # def shuffle_list_easy(list: list): # возможны совпадения элементов со старым списком, особенно в
 #     new_list = []                  # списках малой длины3
