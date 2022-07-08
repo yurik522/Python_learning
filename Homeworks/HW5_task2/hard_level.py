@@ -56,12 +56,13 @@ def first_move_computer(total_count, max_amount):
         while user_count > max_amount:
             print('Неправильный ход, можно брать не более %d конфет' %(max_amount))
             user_count = int(input('Твой ход: \n'))
+        
+        total_count = total_count - user_count
             
         while total_count < 0:            
            total_count = total_count + user_count
            print(f'Осталось только {total_count} конфет')
            user_count = int(input('Твой ход: \n'))
-        total_count = total_count - user_count
         
         if total_count == 0:
             print('Поздравляю, ты выиграл')
